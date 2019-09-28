@@ -25,4 +25,4 @@ function FirstReverse(str) {
     return splitted; 
   }
  
-  FirstReverse("I Love Code");    
+FirstReverse("I Love Code");    
