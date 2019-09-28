@@ -48,4 +48,4 @@ function LetterChanges(str) {
     return modVowelStr
   }
  
-  LetterChanges("fun times!"); 
+  LetterChanges("fun times!")

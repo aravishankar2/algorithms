@@ -24,8 +24,8 @@ function SimpleAdding(num) {
         // 1 + (1+1) + ((1+1) + 1)...etc
         result = result + i
     }
-    console.log(result)
+    
     return result
-  }
+}
  
-SimpleAdding(140);
+SimpleAdding(140)
