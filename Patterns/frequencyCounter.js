@@ -73,3 +73,43 @@ function same_refactored(arr1, arr2) {
 } 
 
 console.log(same_refactored([1, 2, 3, 2], [9, 1, 4, 4]))
+
+
+// BONUS: Anagram problem
+
+/* 
+Given two strings, write a function to determine if the 
+second string is an anagram of the first. An anagram is a 
+word, phrase, or name formed by rearranging the letters of 
+another (ex: cinema and iceman).
+*/
+
+function validAnagram(str1, str2) {
+    // can't be empty string
+    if (str1.length == 0 || str2.length == 0) { return false }
+    // words would have to have the same length to be anagrams
+    if (str1.length !== str2.length) { return false }
+
+    // lets use counters:
+    let counter1 = {}
+    let counter2 = {}
+    for (let letter of str1) {
+        counter1[letter] = (counter1[letter] || 0) + 1
+    }
+    for (let letter of str2) {
+        counter2[letter] = (counter2[letter] || 0) + 1
+    }
+
+    // loop through a counter:
+    for (let key in counter1) {
+        if (!(key in counter2)) {
+            return false
+        }
+        if (counter2[key] !== counter1[key]) {
+            return false
+        }
+    }
+    return true
+}
+
+console.log(validAnagram("anagram", "nagaram"))
