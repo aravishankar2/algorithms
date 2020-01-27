@@ -27,6 +27,7 @@ function AlphabetSoup(str) {
     let dePunctuated = str.replace(punctuation, '')
     let deNumbered = dePunctuated.replace(numbers, '')
     // split it, sort it, join it, return it, bop it..(shout out to my childhood)
+    console.log(deNumbered.split('').sort().join(''))
     return deNumbered.split('').sort().join('')
   }
      
