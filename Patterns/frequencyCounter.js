@@ -85,8 +85,6 @@ another (ex: cinema and iceman).
 */
 
 function validAnagram(str1, str2) {
-    // can't be empty string
-    if (str1.length == 0 || str2.length == 0) { return false }
     // words would have to have the same length to be anagrams
     if (str1.length !== str2.length) { return false }
 
