@@ -60,3 +60,32 @@ function sumZero_refactored(arr) {
 }
 
 console.log(sumZero_refactored([-3, -2, -1, 0, 1, 2, 3]))
+
+
+/*
+Write a function called isSubsequence which takes in two strings
+and checks whether the characters in the first string form a 
+subsequence of the characters in the second string. In other words, 
+the function should check whether the characters in the first 
+string appear somewhere in the secong string, without their order changing.
+
+isSubsequence('hello', 'hello world') // true
+isSubsequence('sing', 'sting') // true
+isSubsequence('abc', 'hello abraca') // true
+isSubsequence('abc', 'acb') //
+*/
+
+function isSubsequence(str1, str2) {
+    let p1 = 0;
+    let p2 = 0;
+//     while your iterating through the second string..
+    while (p2 < str2.length) {
+//     if the first letter of the the strings are equal, move to the next letter in the first string
+    if (str2[p2] === str1[p1]) { p1++ }
+//     if the p1 is the same as the first words length, you found the str in the second word
+    if (p1 === str1.length) { return true }
+//     if the letters are not equal and you havent found the word yet, move to the next letter in str 2 
+    p2++
+    }
+    return false
+}

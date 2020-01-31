@@ -111,3 +111,73 @@ function validAnagram(str1, str2) {
 }
 
 console.log(validAnagram("anagram", "nagaram"))
+
+
+/* 
+BONUS:
+Write a function called sameFrequency. Given two
+positive integers, find out if two numbers have the same
+frequency of digits. Your solution must be O(N)
+
+ex: 
+sameFrequency(182, 281) // true
+sameFrequency(34, 14) // true
+sameFrequency(3589578, 5879385) // true
+sameFrequency(22, 222) // true
+*/
+
+function sameFrequency(num1, num2) {
+    let string1 = num1.toString()
+    let string2 = num2.toString()
+
+    if (string1.length !== string2.length) {
+        return false
+    }
+
+    let freqCounter1 = {}
+    let freqCounter2 = {}
+
+    for (let val of string1) {
+        freqCounter1[val] = (freqCounter1[val] || 0) + 1
+    }
+    
+    for (let val of string2) {
+        freqCounter2[val] = (freqCounter2[val] || 0) + 1
+    }
+
+    for (let key in freqCounter1) {
+      if (!(key in freqCounter2)) {
+          return false
+      }
+    }
+    return true
+}
+
+console.log(sameFrequency(182, 281))
+
+/* 
+BONUS:
+Implement a function called, areThereDuplicates
+which accepts a variable number of arguments, and checks whether
+there are any duplicates among the arguments passed in. You can solve
+this using the frequency counter or the multiple pointers pattern.
+
+ex: 
+areThereDuplicates(1, 2, 3) // false
+areThereDuplicates(1, 2, 2) // true
+*/
+
+function areThereDuplicates(...arr) {
+    let counter = {}
+
+    for (let val of arr) {
+        counter[val] = (counter[val] || 0) + 1
+    }
+    
+    for (let val in counter) {
+        if (counter[val] > 1) {
+            return true
+        }
+    }
+    return false
+}
