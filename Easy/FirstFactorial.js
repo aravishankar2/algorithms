@@ -27,15 +27,13 @@ function FirstFactorial(num) {
        true anymore
     */
     // first we check to see if our input is 0 or 1..
-    if (num > 0 && num <= 1) {
-        return 1
-    } else {
+    if (num === 1) return 1
+  
     /* 
        EX: if we input 4, this will multiply 4 by
        3, then by 2...so on so forth 
     */
-        return num * FirstFactorial(num - 1)
-    }
+    return num * FirstFactorial(num - 1)
 }
      
 FirstFactorial(4)  
