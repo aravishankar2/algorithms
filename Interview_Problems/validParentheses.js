@@ -27,8 +27,27 @@
 // Input: "{[]}"
 // Output: true
 
-
-
-var isValid = function(s) {
-    
+const peek = (stack) => {
+  return stack[stack.length - 1];
 };
+
+let validate = (arr) => {
+  let stack = [];
+
+  for (var i = 0; i < arr.length; i++) {
+    let val = arr[i].charAt();
+    if (val === "(") {
+      stack.push(val);
+    } else if (val === ")") {
+      if (peek(stack) === "(") {
+        stack.pop();
+      } else {
+        return false;
+      }
+    }
+  }
+
+  return stack.length === 0;
+};
+
+console.log(validate("(())"));
