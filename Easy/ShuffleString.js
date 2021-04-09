@@ -10,7 +10,6 @@ Return the shuffled string.
 
 */
 
-
 let strArr = [];
 
 let s = "aiohn";
@@ -27,4 +26,4 @@ function ShuffleString(s, indices) {
   return Object.values(obj).join("");
 }
 
-console.log(ShuffleString(s, indices))
+console.log(ShuffleString(s, indices));
